@@ -103,9 +103,10 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(){
+
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -118,9 +119,9 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex() {
- 
-//  'reviews[0].name gave the restaurant a ${reviews[0].rating} star review, and their feedback was: ${reviews[0].feedback}`
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
+
 }
 
 
@@ -138,8 +139,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(reviews) {
-  return `${this.name[-1]} gave the restaurant a ${this.rating[-1]} review, and their feedback was: ${this.reviews[-1]}`;
+function getLastReview(array) {
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`;
 } 
 
 
