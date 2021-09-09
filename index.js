@@ -47,13 +47,15 @@ Using the burger object below do the following:
 const burger = {
   name: "Burger", 
   price: 18, 
-  category: "Lunch", 
-  teacher: 0.25,
-  student: 0.25,
-  public: 0.10,
-    
-};
-
+  category: "Lunch",   
+  discount: function(customer){
+    if(customer === 'teacher' || customer === 'student'){
+      return this.price - (this.price * 0.25);
+    }else if (customer === 'public'){
+      return this.price - (this.price * 0.10) ;
+    }
+   }
+}
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -72,8 +74,13 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
-
+const personFeedback = [];
+for(let i = 0; i < reviews.length; i++){
+  if(reviews[i].name === 'Julius'){
+  personFeedback.push(reviews[i].feedback);
+  }
+}
+console.log(personFeedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -111,8 +118,9 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex() {
+ 
+//  'reviews[0].name gave the restaurant a ${reviews[0].rating} star review, and their feedback was: ${reviews[0].feedback}`
 }
 
 
@@ -130,8 +138,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(reviews) {
+  return `${this.name[-1]} gave the restaurant a ${this.rating[-1]} review, and their feedback was: ${this.reviews[-1]}`;
 } 
 
 
